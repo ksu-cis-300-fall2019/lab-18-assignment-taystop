@@ -95,5 +95,17 @@ namespace Ksu.Cis300.NameLookup
                 uxRank.Text = "";
             }
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string name = uxName.Text.Trim().ToUpper();
+            if (!_nameInformation.Remove(name))
+            {
+                MessageBox.Show("Name not found.");
+            }
+            _nameInformation.Drawing.Show();
+            uxFrequency.Text = "";
+            uxRank.Text = "";
+        }
     }
 }
